@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='stylesheet' src='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>#main-content{max-width:1000px;margin-left:auto;margin-right:auto;}img{max-width:100%}</style>
+    <title>simpleIO lazy-images</title>
+</head>
+<body>
+    <main>
+        <div id='main-content'>
+            <picture id='picture'>
+                <img id='lazy-img' src='img/no_image_small.webp' data-src='img/cat-small.webp'srcset='img/cat-small.webp 550w, img/cat-medium.webp 800w, img/cat-large.webp 1000w'>
+                <source srcset="img/cat-small.jpg 550w, img/cat-medium.jpg 800w, img/cat-large.jpg 1000w">
+            </picture>
+        </div>
+    </main>
+    <script type="application/javascript" charset="utf-8" src="simpleIO.js"></script>
+    <script type="application/javascript" charset="utf-8" src="makepictures.js"></script>
+
+    <footer id="footer">
+    </footer>
+
+</body>
+
+</html>
