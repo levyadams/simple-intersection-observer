@@ -11,11 +11,14 @@ window.addEventListener("load", function (event) {
 
 function createObserver(images) {
   var options = {
+    //root defaults
     root: null,
     rootMargin: "0px",
+    //threshold is how much of the element is intersected before firing callback
     threshold: .01
   };
-  //select all elements with this id
+  //create an observer, add the options and callback function
+  //then add each image to the observer.
   var observer = new IntersectionObserver(handleIntersect, options);
   images.forEach(function (image) {
     observer.observe(image);
@@ -36,7 +39,6 @@ function handleIntersect(entries, observer) {
     //if this entry is intersecting whatsoever
     if (entry.intersectionRatio > 0) {
       // Stop watching and load the image
-      //entry.target is an <img> tagged 64-bit inline svg
       var image = entry.target;
       //we get our responsive image set
       var url = image.getAttribute('data-src');
@@ -44,7 +46,7 @@ function handleIntersect(entries, observer) {
       image.setAttribute('src', url);
       //we unobserve (Separate) the image entirely
       observer.unobserve(entry.target);
-      console.log('lazy-image loaded!:simpleIO.js line 35 to remove this!');
+      console.log('lazy-image loaded!:simpleIO.js line 49 to remove this!');
     }
   });
 }
